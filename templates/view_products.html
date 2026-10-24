@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Products</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Available Products</h1>
+
+<a href="/admin" class="btn">Dashboard</a>
+
+<a href="/add" class="btn">Add Product</a>
+
+<br><br>
+
+<form action="/search" method="GET">
+
+<input type="text"
+name="keyword"
+placeholder="Search Product">
+
+<button type="submit">Search</button>
+
+</form>
+
+<br>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Image</th>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>Quantity</th>
+
+<th>Price</th>
+
+<th>Actions</th>
+
+</tr>
+
+{% for product in products %}
+
+<tr>
+
+<td>{{ product.id }}</td>
+
+<td>
+
+{% if product.image %}
+
+<img src="{{ url_for('static', filename='uploads/' + product.image) }}"
+width="80"
+height="80">
+
+{% else %}
+
+No Image
+
+{% endif %}
+
+</td>
+
+<td>{{ product.name }}</td>
+
+<td>{{ product.category }}</td>
+
+<td>{{ product.quantity }}</td>
+
+<td>₹ {{ product.price }}</td>
+
+<td>
+
+<a href="/product/{{ product.id }}">Details</a> |
+
+<a href="/update/{{ product.id }}">Update</a> |
+
+<a href="/delete/{{ product.id }}">Delete</a>
+
+<a href="/edit_id/{{ product.id }}">
+    <button>Edit ID</button>
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

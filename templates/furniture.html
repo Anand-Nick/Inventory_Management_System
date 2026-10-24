@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furniture Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Furniture Products</h1>
+
+<a href="/admin"><button>Dashboard</button></a>
+<a href="/products"><button>All Products</button></a>
+
+<br><br>
+
+<div class="product-grid">
+
+{% for product in products %}
+
+<div class="product-card">
+
+{% if product.image %}
+<img src="{{ url_for('static', filename='uploads/' + product.image) }}" width="180" height="180">
+{% endif %}
+
+<h2>{{ product.name }}</h2>
+
+<p><b>Category:</b> {{ product.category }}</p>
+
+<p><b>Quantity:</b> {{ product.quantity }}</p>
+
+<p><b>Price:</b> ₹ {{ product.price }}</p>
+
+<p>{{ product.description }}</p>
+
+<a href="/product/{{ product.id }}"><button>View Details</button></a>
+<a href="/update/{{ product.id }}"><button>Update</button></a>
+
+</div>
+
+{% else %}
+
+<h2>No Furniture Products Available</h2>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>

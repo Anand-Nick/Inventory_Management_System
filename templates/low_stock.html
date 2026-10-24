@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Low Stock Products</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Low Stock Products</h1>
+
+<a href="/admin"><button>Dashboard</button></a>
+
+<a href="/products"><button>All Products</button></a>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>Image</th>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>Quantity</th>
+
+<th>Price</th>
+
+</tr>
+
+{% for product in products %}
+
+<tr>
+
+<td>
+
+{% if product.image %}
+
+<img src="{{ url_for('static', filename='uploads/' + product.image) }}"
+width="80">
+
+{% endif %}
+
+</td>
+
+<td>{{ product.name }}</td>
+
+<td>{{ product.category }}</td>
+
+<td style="color:red;font-weight:bold;">
+{{ product.quantity }}
+</td>
+
+<td>₹ {{ product.price }}</td>
+
+</tr>
+
+{% else %}
+
+<tr>
+
+<td colspan="5">
+
+No Low Stock Products
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

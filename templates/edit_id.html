@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product ID</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit Product ID</h1>
+
+    <form method="POST">
+
+        <label>Current Product ID</label>
+        <input type="text" value="{{ product.id }}" readonly>
+
+        <label>New Product ID</label>
+        <input type="number"
+               name="new_id"
+               value="{{ product.id }}"
+               required>
+
+        <br><br>
+
+        <button type="submit">Update ID</button>
+
+        <a href="/products">
+            <button type="button">Cancel</button>
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

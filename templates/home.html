@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Top Menu Bar -->
+    <header>
+        <nav class="menu-bar">
+            <div class="logo">
+                <h2>Inventory Management System</h2>
+            </div>
+
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/category">Categories</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/login" class="login-btn">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="hero">
+
+        <h1>Welcome to Inventory Management System</h1>
+
+        <p>
+            The Inventory Management System is a web-based application developed
+            using Flask, Python, HTML, CSS, and SQLite. It helps businesses
+            efficiently manage their product inventory by providing an easy way
+            to add, update, delete, and search products. The system maintains
+            accurate stock records and helps prevent overstocking and stock
+            shortages.
+        </p>
+
+        <a href="/login" class="btn">Login as Administrator</a>
+
+    </section>
+
+    <!-- About Project -->
+    <section class="about-project">
+
+        <h2>About This Project</h2>
+
+        <p>
+            This project provides a simple and secure solution for managing
+            inventory in retail stores, supermarkets, pharmacies, warehouses,
+            and small businesses. Administrators can organize products into
+            different categories, upload product images, monitor stock levels,
+            and generate an organized inventory database.
+        </p>
+
+        <p>
+            The application supports CRUD operations (Create, Read, Update,
+            Delete), category-wise product management, image uploading,
+            available stock tracking, low-stock monitoring, and out-of-stock
+            reporting. The responsive interface makes the system easy to use
+            on desktops, laptops, tablets, and mobile devices.
+        </p>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <h2>Key Features</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>📦 Product Management</h3>
+                <p>Add, Edit, Delete and View Products.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📂 Categories</h3>
+                <p>Manage products category-wise.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📷 Image Upload</h3>
+                <p>Upload images for every product.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Stock Reports</h3>
+                <p>Available, Low Stock & Out of Stock.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

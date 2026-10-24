@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Add Product</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Add Product</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Product Name</label>
+
+<input type="text"
+name="name"
+required>
+
+<label>Category</label>
+
+<select name="category" required>
+
+<option value="">Select Category</option>
+
+<option>Electronics</option>
+
+<option>Groceries</option>
+
+<option>Medical</option>
+
+<option>Clothing</option>
+
+<option>Furniture</option>
+
+<option>Fruits</option>
+
+<option>Stationery</option>
+
+<option>Vegetables</option>
+
+</select>
+
+<label>Quantity</label>
+
+<input type="number"
+name="quantity"
+required>
+
+<label>Price</label>
+
+<input type="number"
+step="0.01"
+name="price"
+required>
+
+<label>Description</label>
+
+<textarea
+name="description"
+rows="5"></textarea>
+
+<label>Product Image</label>
+
+<input type="file"
+name="image"
+accept="image/*">
+
+<br><br>
+
+<button type="submit">
+Add Product
+</button>
+
+<a href="/admin">
+<button type="button">
+Back
+</button>
+</a>
+
+</form>
+
+</div>
+
+</body>
+</html>

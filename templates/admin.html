@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<!-- Top Menu Bar -->
+<header>
+    <nav class="menu-bar">
+
+        <div class="logo">
+            <h2>📦 Inventory Management System</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/add">Add Product</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/available">Available</a></li>
+            <li><a href="/lowstock">Low Stock</a></li>
+            <li><a href="/outofstock">Out of Stock</a></li>
+            <li><a href="/logout" class="logout-btn">Logout</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<div class="dashboard">
+
+<h1>Welcome Admin</h1>
+
+<h2>Username : Anand</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Products</h3>
+<h1>{{ total_products }}</h1>
+</div>
+
+<div class="card">
+<h3>Available Products</h3>
+<h1>{{ available_products }}</h1>
+</div>
+
+<div class="card">
+<h3>Low Stock</h3>
+<h1>{{ low_stock }}</h1>
+</div>
+
+<div class="card">
+<h3>Out Of Stock</h3>
+<h1>{{ out_of_stock }}</h1>
+</div>
+
+<div class="card">
+<h3>Electronics</h3>
+<h1>{{ electronics }}</h1>
+<a href="/electronics">View</a>
+</div>
+
+<div class="card">
+<h3>Groceries</h3>
+<h1>{{ groceries }}</h1>
+<a href="/groceries">View</a>
+</div>
+
+<div class="card">
+<h3>Medical</h3>
+<h1>{{ medical }}</h1>
+<a href="/medical">View</a>
+</div>
+
+<div class="card">
+<h3>Clothing</h3>
+<h1>{{ clothing }}</h1>
+<a href="/clothing">View</a>
+</div>
+
+<div class="card">
+<h3>Furniture</h3>
+<h1>{{ furniture }}</h1>
+<a href="/furniture">View</a>
+</div>
+
+<div class="card">
+<h3>Fruits</h3>
+<h1>{{ fruits }}</h1>
+<a href="/fruits">View</a>
+</div>
+
+<div class="card">
+    <h3>Vegetables</h3>
+    <h1>{{ vegetables }}</h1>
+    <a href="/vegetables">View</a>
+</div>
+
+<div class="card">
+<h3>Stationery</h3>
+<h1>{{ stationery }}</h1>
+<a href="/stationery">View</a>
+</div>
+
+</div>
+
+<div class="quick-links">
+
+<h2>Quick Actions</h2>
+
+<a href="/add" class="btn">Add Product</a>
+
+<a href="/products" class="btn">View Products</a>
+
+<a href="/available" class="btn">Available Products</a>
+
+<a href="/lowstock" class="btn">Low Stock</a>
+
+<a href="/outofstock" class="btn">Out Of Stock</a>
+
+</div>
+
+</div>
+</body>
+</html>
